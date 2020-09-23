@@ -8,6 +8,8 @@
     "cli"
   ],
   "license": "MIT",
+  "repository": "privatenumber/vue-just-ssr",
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
   "files": [
     "bin",
     "lib"
@@ -27,8 +29,6 @@
   "lint-staged": {
     "*.js": "xo"
   },
-  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "@vue-reactivity/watch": "^0.1.2",
     "@vue/reactivity": "^3.0.0",
