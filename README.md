@@ -1,4 +1,4 @@
-# vue-just-ssr <a href="https://npm.im/vue-just-ssr"><img src="https://badgen.net/npm/v/vue-just-ssr"></a> <a href="https://npm.im/vue-just-ssr"><img src="https://badgen.net/npm/dm/vue-just-ssr"></a> <a href="https://packagephobia.now.sh/result?p=vue-just-ssr"><img src="https://packagephobia.now.sh/badge?p=vue-just-ssr"></a> <a href="https://bundlephobia.com/result?p=vue-just-ssr"><img src="https://badgen.net/bundlephobia/minzip/vue-just-ssr"></a>
+# vue-just-ssr <a href="https://npm.im/vue-just-ssr"><img src="https://badgen.net/npm/v/vue-just-ssr"></a> <a href="https://npm.im/vue-just-ssr"><img src="https://badgen.net/npm/dm/vue-just-ssr"></a> <a href="https://packagephobia.now.sh/result?p=vue-just-ssr"><img src="https://packagephobia.now.sh/badge?p=vue-just-ssr"></a>
 
 CLI tool to spin up a Vue SSR dev environment using your own Webpack config!
 
