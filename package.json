@@ -1,6 +1,6 @@
 {
   "name": "vue-just-ssr",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Instantly add a Vue SSR dev-env to your repo",
   "keywords": [
     "vue",
