@@ -48,7 +48,9 @@ If you're interested in what this looks like, checkout the Webpack config in the
 
 ### Template
 Flag: `--template, -t`
+
 Default: [`/lib/template.html`](/lib/template.html)
+
 Example: `just-ssr --template ./dev/template.html`
 
 You can pass in your own template for the entire page's HTML with the `--template` flag. The template should contain a comment `<!--vue-ssr-outlet-->` which serves as the placeholder for rendered app content.
@@ -57,7 +59,9 @@ For more information, read the official [Vue docs](https://ssr.vuejs.org/api/#te
 
 ### App
 Flag: `--create-app, -a`
+
 Default: [`/lib/src/create-app.js`](/lib/src/create-app.js)
+
 Example: `just-ssr --create-app ./dev/create-app.js`
 
 Pass in a custom `create-app` function to control how your Vue app is instantiated.
@@ -134,7 +138,9 @@ export default createRouter
 
 ### Port
 Flag: `--port, -p`
+
 Default: `8080`
+
 Example: `just-ssr --port 3333`
 
 Port for the dev server to listen on. If not provided, checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
