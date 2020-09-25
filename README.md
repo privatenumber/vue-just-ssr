@@ -66,6 +66,8 @@ Use this flag to pass in your own template for the entire page's HTML with the `
 
 Read the official [Vue docs](https://ssr.vuejs.org/api/#template) for more information.
 
+👉 Checkout the [Template metadata demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/template-meta) to see a working example
+
 ### App
 Flag: `--create-app, -a`
 
@@ -146,6 +148,8 @@ function createRouter() {
 
 export default createRouter
 ```
+
+👉 Checkout the [Vue Router demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/vue-router) to see a working example
 
 ### Port
 Flag: `--port, -p`
