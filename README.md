@@ -53,9 +53,9 @@ Default: [`/lib/template.html`](/lib/template.html)
 
 Example: `just-ssr --template ./dev/template.html`
 
-You can pass in your own template for the entire page's HTML with the `--template` flag. The template should contain a comment `<!--vue-ssr-outlet-->` which serves as the placeholder for rendered app content.
+Use this flag to pass in your own template for the entire page's HTML with the `--template` flag. The template should contain a comment `<!--vue-ssr-outlet-->` which serves as the placeholder for rendered app content.
 
-For more information, read the official [Vue docs](https://ssr.vuejs.org/api/#template).
+Read the official [Vue docs](https://ssr.vuejs.org/api/#template) for more information.
 
 ### App
 Flag: `--create-app, -a`
@@ -64,7 +64,7 @@ Default: [`/lib/src/create-app.js`](/lib/src/create-app.js)
 
 Example: `just-ssr --create-app ./dev/create-app.js`
 
-Pass in a custom `create-app` function to control how your Vue app is instantiated.
+Use this flag to pass in a custom `create-app` function to control how your Vue app is instantiated.
 
 The file should have a default export with a function that returns the Vue app.
 
@@ -143,7 +143,7 @@ Default: `8080`
 
 Example: `just-ssr --port 3333`
 
-Port for the dev server to listen on. If not provided, checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
+Use this flag to set the port for the SSR server to listen on. If not provided, it checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
 
 ## Demo
 👉 Check out [vue-just-ssr-demo](https://github.com/privatenumber/vue-just-ssr-demo) for a demo of how easily a Vue SSR + HMR dev environment is added to the repo.
