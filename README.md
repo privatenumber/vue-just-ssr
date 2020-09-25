@@ -16,12 +16,12 @@ npm i -D vue-just-ssr vue-server-renderer
 
 _Note: Assuming you already have `webpack` and `vue` installed, your `vue-server-renderer` version should match `vue`'s_
 
-## 👨🏻‍🏫 Usage
+## 🚦 Getting started
 
 ### CLI
 Use it straight from your commandline via [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
 ```sh
-npx just-ssr --webpack-config [webpack config file]
+npx just-ssr --webpack-config <webpack config file>
 ```
 
 ### npm script
@@ -32,7 +32,7 @@ You can use `vue-just-ssr` in your npm `package.json` scripts simply by referenc
   ...,
 
    "scripts": {
-+    "dev": "just-ssr --webpack-config build/webpack.config.js"
++    "dev": "just-ssr --webpack-config <webpack config file>"
    },
 
   ...
@@ -40,50 +40,13 @@ You can use `vue-just-ssr` in your npm `package.json` scripts simply by referenc
 ```
 
 ### Webpack config
-This module is designed for adding SSR to an existing Vue codebase, but if you're starting a new one, make sure you have at least a [bare miniumum Webpack config](https://vue-loader.vuejs.org/guide/#manual-setup) (eg. `webpack.config.js`) setup for a Vue app:
+This module is designed for adding SSR to an existing Vue codebase, but if you're starting a new one, make sure you have at least a [bare miniumum Webpack config](https://vue-loader.vuejs.org/guide/#manual-setup) (eg. `webpack.config.js`) setup for a Vue app. If you're interested in what this looks like, checkout the [demo](https://github.com/privatenumber/vue-just-ssr-demo/blob/master/webpack.config.js).
 
-```js
-const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+## Customization
 
-module.exports = {
-  mode: 'development',
 
-  entry: './src/App.vue',
 
-  output: {
-    filename: '[name].js',
-    path: path.resolve('dist')
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          {
-            loader: 'css-loader',
-            option: {
-              esModule: false
-            }
-          }
-        ]
-      }
-    ]
-  },
-
-  plugins: [
-    new VueLoaderPlugin()
-  ]
-}
-```
-
-### Demo
+## Demo
 👉 Check out [vue-just-ssr-demo](https://github.com/privatenumber/vue-just-ssr-demo) for a demo of how easily a Vue SSR + HMR dev environment is added to the repo.
 
 ## 🏁 Flags
@@ -95,3 +58,7 @@ module.exports = {
 - `--template, -t`
 
   Pass in a custom HTML template for the SSR to be injected to. Default is located in [`/lib/template.html`](/lib/template.html).
+
+- `--create-app, -a`
+
+  Pass in a custom `create-app` function. Default is located in [`/lib/src/create-app.js`](/lib/src/create-app.js).
