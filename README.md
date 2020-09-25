@@ -17,8 +17,11 @@ npm i -D vue-just-ssr vue-server-renderer
 _Note: Assuming you already have `webpack` and `vue` installed, your `vue-server-renderer` version should match `vue`'s_
 
 
-## Demos
-👉 Check out [vue-just-ssr-demo](https://github.com/privatenumber/vue-just-ssr-demo) for a demo of how easily a Vue SSR + HMR dev environment is added to the repo.
+## ⚡️ Demos
+Check out the demos to see how easily a Vue SSR + HMR dev environment can be setup in your repo.
+
+- [Basic usage](https://github.com/privatenumber/vue-just-ssr-demo)
+- [Vue Router demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/vue-router)
 
 
 ## 🚦 Getting started
@@ -97,6 +100,8 @@ The [Vue SSR guide](https://ssr.vuejs.org/guide/routing.html#routing-with-vue-ro
 
 In your `createApp` function, make sure you return the instantiated router via the `router` property in the `create-app` return object.
 
+In your App entry-point, simply mount `<router-view />`.
+
 **`create-app.js`**
 
 ```js
@@ -107,7 +112,7 @@ function createApp(App) {
     const router = createRouter()
 
     const app = new Vue({
-        render: h => h('router-view'),
+        render: h => h(App),
         router
     })
 
