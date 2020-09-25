@@ -20,7 +20,8 @@ _Note: Assuming you already have `webpack` and `vue` installed, your `vue-server
 ## ⚡️ Demos
 Check out the demos to see how easily a Vue SSR + HMR dev environment can be setup in your repo.
 
-- [Basic usage](https://github.com/privatenumber/vue-just-ssr-demo)
+- [Basic usage demo](https://github.com/privatenumber/vue-just-ssr-demo)
+- [Template metadata demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/template-meta)
 - [Vue Router demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/vue-router)
 
 
