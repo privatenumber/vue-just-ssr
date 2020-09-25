@@ -16,6 +16,11 @@ npm i -D vue-just-ssr vue-server-renderer
 
 _Note: Assuming you already have `webpack` and `vue` installed, your `vue-server-renderer` version should match `vue`'s_
 
+
+## Demos
+👉 Check out [vue-just-ssr-demo](https://github.com/privatenumber/vue-just-ssr-demo) for a demo of how easily a Vue SSR + HMR dev environment is added to the repo.
+
+
 ## 🚦 Getting started
 
 ### CLI
@@ -121,7 +126,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const createRouter = () => {
+function createRouter() {
     return new Router({
         mode: 'history',
         routes: [
@@ -144,7 +149,3 @@ Default: `8080`
 Example: `just-ssr --port 3333`
 
 Use this flag to set the port for the SSR server to listen on. If not provided, it checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
-
-## Demo
-👉 Check out [vue-just-ssr-demo](https://github.com/privatenumber/vue-just-ssr-demo) for a demo of how easily a Vue SSR + HMR dev environment is added to the repo.
-
