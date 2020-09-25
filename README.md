@@ -40,10 +40,17 @@ You can use `vue-just-ssr` in your npm `package.json` scripts simply by referenc
 ```
 
 ### Webpack config
-This module is designed for adding SSR to an existing Vue codebase, but if you're starting a new one, make sure you have at least a [bare miniumum Webpack config](https://vue-loader.vuejs.org/guide/#manual-setup) (eg. `webpack.config.js`) setup for a Vue app. If you're interested in what this looks like, checkout the [demo](https://github.com/privatenumber/vue-just-ssr-demo/blob/master/webpack.config.js).
+This module is designed for adding SSR to an existing Vue + Webpack codebase, but if you're starting a new one, make sure you have at least a [bare miniumum Webpack config](https://vue-loader.vuejs.org/guide/#manual-setup) (eg. `webpack.config.js`) setup for a Vue app.
 
-## Customization
+If you're interested in what this looks like, checkout the Webpack config in the [demo](https://github.com/privatenumber/vue-just-ssr-demo/blob/master/webpack.config.js).
 
+## 🎨 Customization
+
+### Template
+
+### App
+
+#### Vue router
 
 
 ## Demo
