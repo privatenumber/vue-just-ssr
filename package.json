@@ -5,7 +5,8 @@
   "keywords": [
     "vue",
     "ssr",
-    "cli"
+    "cli",
+    "webpack"
   ],
   "license": "MIT",
   "repository": "privatenumber/vue-just-ssr",
