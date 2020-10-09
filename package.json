@@ -34,6 +34,7 @@
     "@vue-reactivity/watch": "^0.1.2",
     "@vue/reactivity": "^3.0.0",
     "chalk": "^4.1.0",
+    "compression": "^1.7.4",
     "connect": "^3.7.0",
     "consola": "^2.15.0",
     "get-port": "^5.1.1",
