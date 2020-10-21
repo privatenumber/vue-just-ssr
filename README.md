@@ -159,3 +159,25 @@ Default: `8080`
 Example: `just-ssr --port 3333`
 
 Use this flag to set the port for the SSR server to listen on. If not provided, it checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
+
+### Client/Server-build plugins
+If you have plugins that you only want running on the client or server-build, you can wrap them in `clientOnly` and `serverOnly` functions.
+
+For example, if you want `ESLintPlugin` to only run on the client-build, you can modify your Webpack config like so:
+
+```js
+const { clientOnly } = require('vue-just-ssr');
+
+module.exports = {
+    ...,
+
+    plugins: [
+        clientOnly(
+            new ESLintPlugin({
+                files: '**/*.{vue,js}',
+                emitWarning: true
+            })
+        )
+    ]
+};
+```
