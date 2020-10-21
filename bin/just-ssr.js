@@ -5,8 +5,9 @@ const assert = require('assert');
 const chalk = require('chalk');
 const justSSR = require('..');
 const {version: pkgVersion} = require('../package.json');
+const {cosmiconfig} = require('cosmiconfig');
 
-(({
+(async ({
 	'webpack-config': webpackConfigPath,
 	template,
 	'create-app': createAppPath,
@@ -32,6 +33,11 @@ Spin up a Vue SSR dev environment using your Webpack config
 `);
 		return;
 	}
+
+	const explorer = cosmiconfig('just-ssr');
+	const config = await explorer.search();
+
+	console.log(config);
 
 	assert(webpackConfigPath, chalk`{red.bold Error:} Webpack config must be passed into the --webpack-config flag`);
 
