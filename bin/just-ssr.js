@@ -7,16 +7,8 @@ const justSSR = require('..');
 const {version: pkgVersion} = require('../package.json');
 const {cosmiconfig} = require('cosmiconfig');
 
-(async ({
-	'webpack-config': webpackConfigPath,
-	template,
-	'create-app': createAppPath,
-	port,
-	open,
-	help,
-	version,
-}) => {
-	if (help || version) {
+(async argv => {
+	if (argv.help || argv.version) {
 		console.log(`
 ${chalk.underline.bold(`just-ssr ${pkgVersion}`)}
 
@@ -35,18 +27,26 @@ Spin up a Vue SSR dev environment using your Webpack config
 	}
 
 	const explorer = cosmiconfig('just-ssr');
-	const config = await explorer.search();
+	const found = await explorer.search();
+	const config = found.config || {};
 
-	console.log(config);
+	const {
+		'webpack-config': webpackConfigPath = config.webpackConfigPath,
+		template: templatePath = config.templatePath,
+		'create-app': createAppPath = config.createAppPath,
+		port = config.port,
+		open,
+	} = argv;
 
 	assert(webpackConfigPath, chalk`{red.bold Error:} Webpack config must be passed into the --webpack-config flag`);
 
 	justSSR({
-		webpackConfigPath,
-		template,
-		createAppPath,
 		port,
 		open,
+		webpackConfigPath,
+		templatePath,
+		createAppPath,
+		webpackHook: config.webpack,
 	});
 })(minimist(process.argv.slice(2), {
 	alias: {
