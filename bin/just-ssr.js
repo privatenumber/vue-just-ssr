@@ -9,7 +9,6 @@ const {version: pkgVersion} = require('../package.json');
 (({
 	'webpack-config': webpackConfigPath,
 	template,
-	'create-app': createAppPath,
 	port,
 	open,
 	help,
@@ -28,7 +27,6 @@ Spin up a Vue SSR dev environment using your Webpack config
   --port, -p                [string] server port
   --webpack-config, -c      [string] Webpack base config path
   --template, -t            [string] custom SSR template path
-  --create-app, -a          [string] custom create-app path
 `);
 		return;
 	}
@@ -38,7 +36,6 @@ Spin up a Vue SSR dev environment using your Webpack config
 	justSSR({
 		webpackConfigPath,
 		template,
-		createAppPath,
 		port,
 		open,
 	});
