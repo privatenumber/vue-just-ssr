@@ -1,0 +1,10 @@
+{
+  "branches": [
+    "master",
+    {
+      "name": "alpha",
+      "prerelease": "alpha",
+      "channel": "latest"
+    }
+  ]
+}
