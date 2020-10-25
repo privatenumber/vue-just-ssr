@@ -37,15 +37,15 @@ npx just-ssr --webpack-config <webpack config file>
 You can use `vue-just-ssr` in your npm `package.json` scripts simply by referencing it as `just-ssr`.
 
 ```diff
-{
-  ...,
+  {
+      ...,
 
-   "scripts": {
-+    "dev": "just-ssr --webpack-config <webpack config file>"
-   },
+      "scripts": {
++         "dev": "just-ssr --webpack-config <webpack config file>"
+      },
 
-  ...
-}
+      ...
+  }
 ```
 
 ### Webpack config
@@ -53,7 +53,32 @@ This module is designed for adding SSR to an existing Vue + Webpack codebase, bu
 
 If you're interested in what this looks like, checkout the Webpack config in the [demo](https://github.com/privatenumber/vue-just-ssr-demo/blob/master/webpack.config.js).
 
+To your Webpack config, add the `JustSsrPlugin` to the `plugins` array:
+
+```diff
++ const { JustSsrPlugin } = require('vue-just-ssr');
+
+  module.exports = {
+      ...,
+
+      plugins: [
+          ...,
++         new JustSsrPlugin()
+      ]
+  }
+```
+
 ## 🎨 Customization
+
+### Server port
+Flag: `--port, -p`
+
+Default: `8080`
+
+Example: `just-ssr --port 3333`
+
+Use this flag to set the port for the SSR server to listen on. If not provided, it checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
+
 
 ### Template
 Flag: `--template, -t`
@@ -68,16 +93,17 @@ Read the official [Vue docs](https://ssr.vuejs.org/api/#template) for more infor
 
 👉 Checkout the [Template metadata demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/template-meta) to see a working example
 
-### App
-Flag: `--create-app, -a`
+
+### Create App
 
 Default: [`/lib/src/create-app.js`](/lib/src/create-app.js)
 
-Example: `just-ssr --create-app ./dev/create-app.js`
+You can pass in a custom _create-app.js_ file to gain more control over your app. For example, you can use this to set up [routing](#vue-router) or other app-level integrations.
 
-Use this flag to pass in a custom `create-app` function to control how your Vue app is instantiated.
+The _create-app.js_ file is introduced in [Vue's SSR guide](https://ssr.vuejs.org/guide/routing.html#routing-with-vue-router).
+It must default-export a function that returns the Vue app. Any setup code for the app can live here:
 
-The file should have a default export with a function that returns the Vue app.
+**`create-app.js`**
 
 ```js
 import Vue from 'vue'
@@ -95,6 +121,24 @@ function createApp(App) {
 export default createApp
 
 ```
+
+Pass in the path to `create-app.js` via the `createAppPath` property in the Webpack plugin: 
+
+```diff
+  const { JustSsrPlugin } = require('vue-just-ssr');
+
+  module.exports = {
+      ...,
+
+      plugins: [
+          ...,
+          new JustSsrPlugin({
++             createAppPath: './path-to/create-app.js',
+          })
+      ]
+  }
+```
+
 
 #### Vue router
 If you want to add routing, install Vue Router (`npm i vue-router`) and add it to your custom `create-app` file.
@@ -151,33 +195,31 @@ export default createRouter
 
 👉 Checkout the [Vue Router demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/vue-router) to see a working example
 
-### Port
-Flag: `--port, -p`
-
-Default: `8080`
-
-Example: `just-ssr --port 3333`
-
-Use this flag to set the port for the SSR server to listen on. If not provided, it checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
-
-### Client/Server-build plugins
+### Client/Server Webpack plugins
 If you have plugins that you only want running on the client or server-build, you can wrap them in `clientOnly` and `serverOnly` functions.
 
 For example, if you want `ESLintPlugin` to only run on the client-build, you can modify your Webpack config like so:
 
-```js
-const { clientOnly } = require('vue-just-ssr');
+```diff
+  const {
+      JustSsrPlugin,
++     clientOnly
+  } = require('vue-just-ssr');
+  
+  module.exports = {
+      ...,
+  
+      plugins: [
+          ...,
 
-module.exports = {
-    ...,
+          new JustSsrPlugin(),
 
-    plugins: [
-        clientOnly(
-            new ESLintPlugin({
-                files: '**/*.{vue,js}',
-                emitWarning: true
-            })
-        )
-    ]
-};
++         clientOnly(
+              new ESLintPlugin({
+                  files: '**/*.{vue,js}',
+                  emitWarning: true
+              })
++         )
+      ]
+  };
 ```
