@@ -133,7 +133,7 @@ Pass in the path to `create-app.js` via the `createAppPath` property in the Webp
       plugins: [
           ...,
           new JustSsrPlugin({
-+             createAppPath: './path-to/create-app.js',
++             createAppPath: './path-to/create-app.js'
           })
       ]
   }
