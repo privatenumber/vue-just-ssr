@@ -143,11 +143,9 @@ Pass in the path to `create-app.js` via the `createAppPath` property in the Webp
 #### Vue router
 If you want to add routing, install Vue Router (`npm i vue-router`) and add it to your custom `create-app` file.
 
-The [Vue SSR guide](https://ssr.vuejs.org/guide/routing.html#routing-with-vue-router) recommends splitting up your router file and exporting a `createRouter` function to import into to your `create-app` file.
+The [Vue SSR guide](https://ssr.vuejs.org/guide/routing.html#routing-with-vue-router) recommends organizing your router in a separate file (eg. `create-router.js`) that exports a `createRouter` function and importing it into `create-app.js`.
 
-In your `createApp` function, make sure you return the instantiated router via the `router` property in the `create-app` return object.
-
-In your App entry-point, simply mount `<router-view />`.
+In your App entry-point, simply render `<router-view />`.
 
 **`create-app.js`**
 
@@ -163,7 +161,7 @@ function createApp(App) {
         router
     })
 
-    return { app, router }
+    return { app }
 }
 
 export default createApp
