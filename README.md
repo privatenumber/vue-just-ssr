@@ -23,6 +23,7 @@ Check out the demos to see how easily a Vue SSR + HMR dev environment can be set
 - [Basic usage demo](https://github.com/privatenumber/vue-just-ssr-demo)
 - [Template metadata demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/template-meta)
 - [Vue Router demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/vue-router)
+- [Vue router + Static site compilation demo](https://github.com/privatenumber/vue-just-ssr-demo/tree/vue-router-html)
 
 
 ## 🚦 Getting started
