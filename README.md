@@ -28,10 +28,24 @@ Check out the demos to see how easily a Vue SSR + HMR dev environment can be set
 
 ## 🚦 Getting started
 
-### CLI
-Use it straight from your commandline via [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
-```sh
-npx just-ssr --webpack-config <webpack config file>
+### Webpack config
+This module is designed for adding SSR to an existing Vue + Webpack codebase, but if you're starting a new one, make sure you have at least a [bare miniumum Webpack config](https://vue-loader.vuejs.org/guide/#manual-setup) (eg. `webpack.config.js`) setup for a Vue app.
+
+If you're interested in what this looks like, checkout the Webpack config in the [demo](https://github.com/privatenumber/vue-just-ssr-demo/blob/master/webpack.config.js).
+
+Add the `JustSsrPlugin` to your Webpack config in the `plugins` array:
+
+```diff
++ const { JustSsrPlugin } = require('vue-just-ssr');
+
+  module.exports = {
+      ...,
+
+      plugins: [
+          ...,
++         new JustSsrPlugin()
+      ]
+  }
 ```
 
 ### npm script
@@ -49,24 +63,10 @@ You can use `vue-just-ssr` in your npm `package.json` scripts simply by referenc
   }
 ```
 
-### Webpack config
-This module is designed for adding SSR to an existing Vue + Webpack codebase, but if you're starting a new one, make sure you have at least a [bare miniumum Webpack config](https://vue-loader.vuejs.org/guide/#manual-setup) (eg. `webpack.config.js`) setup for a Vue app.
-
-If you're interested in what this looks like, checkout the Webpack config in the [demo](https://github.com/privatenumber/vue-just-ssr-demo/blob/master/webpack.config.js).
-
-To your Webpack config, add the `JustSsrPlugin` to the `plugins` array:
-
-```diff
-+ const { JustSsrPlugin } = require('vue-just-ssr');
-
-  module.exports = {
-      ...,
-
-      plugins: [
-          ...,
-+         new JustSsrPlugin()
-      ]
-  }
+### CLI
+Alternatively, Use it straight from your commandline via [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
+```sh
+npx just-ssr --webpack-config <webpack config file>
 ```
 
 ## 🎨 Customization
