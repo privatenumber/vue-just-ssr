@@ -64,7 +64,7 @@ You can use `vue-just-ssr` in your npm `package.json` scripts simply by referenc
 ```
 
 ### CLI
-Alternatively, Use it straight from your commandline via [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
+Alternatively, use it straight from your commandline via [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
 ```sh
 npx just-ssr --webpack-config <webpack config file>
 ```
