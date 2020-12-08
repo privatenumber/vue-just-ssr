@@ -71,6 +71,17 @@ npx just-ssr --webpack-config <webpack config file>
 
 ## 🎨 Customization
 
+### Server address
+Flag: `--address, -a`
+
+Default: `127.0.0.1`
+
+Example: `just-ssr -a 0.0.0.0`
+
+Use this flag to set the address for the server to bind to. If not provided, it checks `process.env.HOST` before falling back to `127.0.0.1` (or `localhost`).
+
+The default address `127.0.0.1` is chosen for security reasons—it's a [loopback address](https://superuser.com/a/949522) which means it is not exposed to the rest of your [local area network (LAN)](https://en.wikipedia.org/wiki/Local_area_network). If you wish to expose the server externally, bind the address to all interfaces via `0.0.0.0` or a more specific interface address.
+
 ### Server port
 Flag: `--port, -p`
 
@@ -78,7 +89,7 @@ Default: `8080`
 
 Example: `just-ssr --port 3333`
 
-Use this flag to set the port for the SSR server to listen on. If not provided, it checks `process.env.PORT` before falling back to 8080. If the port is taken, it will choose a random available port.
+Use this flag to set the port for the server to listen on. If not provided, it checks `process.env.PORT` before falling back to `8080`. If the port is taken, it will choose a random available port.
 
 
 ### Template
