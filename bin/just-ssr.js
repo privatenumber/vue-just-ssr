@@ -9,6 +9,7 @@ const {version: pkgVersion} = require('../package.json');
 (({
 	'webpack-config': webpackConfigPath,
 	template,
+	address,
 	port,
 	open,
 	help,
@@ -22,11 +23,12 @@ Spin up a Vue SSR dev environment using your Webpack config
 
 
 ⚙️  ${chalk.bold('Options')}
-  --help, -h                [boolean] show help
-  --version                 [boolean] show version
-  --port, -p                [string] server port
+  --help, -h                [boolean] Show help
+  --version                 [boolean] Show version
+  --address, -a             [string] Server address (default: 127.0.0.1)
+  --port, -p                [string] Server port (default: 8080 or next available)
   --webpack-config, -c      [string] Webpack base config path
-  --template, -t            [string] custom SSR template path
+  --template, -t            [string] Custom SSR template path
 `);
 		return;
 	}
@@ -36,15 +38,16 @@ Spin up a Vue SSR dev environment using your Webpack config
 	justSSR({
 		webpackConfigPath,
 		template,
+		address,
 		port,
 		open,
 	});
 })(minimist(process.argv.slice(2), {
 	alias: {
 		'webpack-config': 'c',
+		address: 'a',
 		port: 'p',
 		template: 't',
-		'create-app': 'a',
 		help: 'h',
 	},
 }));
