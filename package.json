@@ -59,9 +59,25 @@
     "@pvtnbr/eslint-config-base": "^0.1.8",
     "eslint": "^7.18.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0"
+    "lint-staged": "^10.4.0",
+    "vue": "^2.0.0",
+    "vue-server-renderer": "^2.0.0",
+    "webpack": "^4.0.0"
   },
   "eslintConfig": {
-    "extends": "@pvtnbr/eslint-config-base"
+    "extends": "@pvtnbr/eslint-config-base",
+    "overrides": [{
+      "files": "**/src/*.js",
+      "rules": {
+        "import/no-unresolved": ["error", {
+          "commonjs": true,
+          "caseSensitive": true,
+          "ignore": [
+            "_just-ssr-app",
+            "create-app"
+          ]
+        }]
+      }
+    }]
   }
 }

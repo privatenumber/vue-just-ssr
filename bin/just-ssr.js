@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const minimist = require('minimist');
 const assert = require('assert');
+const minimist = require('minimist');
 const chalk = require('chalk');
 const justSSR = require('..');
-const {version: pkgVersion} = require('../package.json');
+const { version: packageVersion } = require('../package.json');
 
 (({
 	'webpack-config': webpackConfigPath,
@@ -17,7 +17,7 @@ const {version: pkgVersion} = require('../package.json');
 }) => {
 	if (help || version) {
 		console.log(`
-${chalk.underline.bold(`just-ssr ${pkgVersion}`)}
+${chalk.underline.bold(`just-ssr ${packageVersion}`)}
 
 Spin up a Vue SSR dev environment using your Webpack config
 
@@ -51,4 +51,3 @@ Spin up a Vue SSR dev environment using your Webpack config
 		help: 'h',
 	},
 }));
-
