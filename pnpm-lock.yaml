@@ -18,7 +18,7 @@ dependencies:
   webpack-node-externals: 2.5.2
   webpackbar: 4.0.0_webpack@4.46.0
 devDependencies:
-  '@pvtnbr/eslint-config-base': 0.1.8_eslint@7.18.0
+  '@pvtnbr/eslint-config-base': 0.1.9_eslint@7.18.0
   eslint: 7.18.0
   husky: 4.3.8
   lint-staged: 10.5.3
@@ -127,7 +127,7 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-1JTKgrOKAHVivSvOYw+sJOunkBjUOvjqWk1DPja7ZFhIS2mX/4EgTT8M7eTK9jrKhL/FvXXEbQwIs3pg1xp3dg==
-  /@pvtnbr/eslint-config-base/0.1.8_eslint@7.18.0:
+  /@pvtnbr/eslint-config-base/0.1.9_eslint@7.18.0:
     dependencies:
       confusing-browser-globals: 1.0.10
       eslint: 7.18.0
@@ -141,7 +141,7 @@ packages:
     peerDependencies:
       eslint: ^7.15.0
     resolution:
-      integrity: sha512-bQLUIXn5W33PO/3YCcZrtD4SNj47eT5VfB+Cv7nbkIQSvgowx0FlPCGqVPcO5b5f4lLhvoULgJZkcvsB81Hghw==
+      integrity: sha512-OIFxbPzehZYfkOfLgflxp7mN/v8QO84dV+SD55UZcOQVaV76j0zP24DuuD2Q5rHJqdxSAjELI3JdjkkNjqlLoQ==
   /@types/json5/0.0.29:
     dev: true
     resolution:
@@ -4640,7 +4640,7 @@ packages:
     resolution:
       integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 specifiers:
-  '@pvtnbr/eslint-config-base': ^0.1.8
+  '@pvtnbr/eslint-config-base': ^0.1.9
   '@vue-reactivity/watch': ^0.1.2
   '@vue/reactivity': ^3.0.0
   chalk: ^4.1.0
