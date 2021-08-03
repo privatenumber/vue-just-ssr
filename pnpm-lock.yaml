@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@pvtnbr/eslint-config-base': ^0.1.19
   '@vue-reactivity/watch': ^0.1.2
-  '@vue/reactivity': ^3.0.0
+  '@vue/reactivity': ^3.1.5
   chalk: ^4.1.2
   compression: ^1.7.4
   connect: ^3.7.0
@@ -29,8 +29,8 @@ specifiers:
   webpackbar: ^4.0.0
 
 dependencies:
-  '@vue-reactivity/watch': 0.1.6_@vue+reactivity@3.0.5
-  '@vue/reactivity': 3.0.5
+  '@vue-reactivity/watch': 0.1.6_@vue+reactivity@3.1.5
+  '@vue/reactivity': 3.1.5
   chalk: 4.1.2
   compression: 1.7.4
   connect: 3.7.0
@@ -211,23 +211,23 @@ packages:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
 
-  /@vue-reactivity/watch/0.1.6_@vue+reactivity@3.0.5:
+  /@vue-reactivity/watch/0.1.6_@vue+reactivity@3.1.5:
     resolution: {integrity: sha512-Se4D+1LAnn8B49MuRzWyZv2syb+9FTuxXKA8FF6gjZD08PdVwoVZG3ncZzqFFG2lVlzx03+rjOCtIJb+VkD3Qg==}
     peerDependencies:
       '@vue/reactivity': '>=3.0.0-rc.1'
       '@vue/shared': '>=3.0.0-rc.1'
     dependencies:
-      '@vue/reactivity': 3.0.5
+      '@vue/reactivity': 3.1.5
     dev: false
 
-  /@vue/reactivity/3.0.5:
-    resolution: {integrity: sha512-3xodUE3sEIJgS7ntwUbopIpzzvi7vDAOjVamfb2l+v1FUg0jpd3gf62N2wggJw3fxBMr+QvyxpD+dBoxLsmAjw==}
+  /@vue/reactivity/3.1.5:
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
     dependencies:
-      '@vue/shared': 3.0.5
+      '@vue/shared': 3.1.5
     dev: false
 
-  /@vue/shared/3.0.5:
-    resolution: {integrity: sha512-gYsNoGkWejBxNO6SNRjOh/xKeZ0H0V+TFzaPzODfBjkAIb0aQgBuixC1brandC/CDJy1wYPwSoYrXpvul7m6yw==}
+  /@vue/shared/3.1.5:
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
     dev: false
 
   /@webassemblyjs/ast/1.9.0:

@@ -37,7 +37,7 @@
 	},
 	"dependencies": {
 		"@vue-reactivity/watch": "^0.1.2",
-		"@vue/reactivity": "^3.0.0",
+		"@vue/reactivity": "^3.1.5",
 		"chalk": "^4.1.2",
 		"compression": "^1.7.4",
 		"connect": "^3.7.0",
