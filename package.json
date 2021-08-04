@@ -52,7 +52,7 @@
 		"webpack-dev-middleware": "^5.0.0",
 		"webpack-hot-middleware": "^2.25.0",
 		"webpack-node-externals": "^3.0.0",
-		"webpackbar": "^4.0.0"
+		"webpackbar": "^5.0.0-3"
 	},
 	"devDependencies": {
 		"@pvtnbr/eslint-config-base": "^0.1.19",
