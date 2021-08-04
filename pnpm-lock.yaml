@@ -10,7 +10,6 @@ specifiers:
   consola: ^2.15.3
   conventional-changelog-conventionalcommits: ^4.6.0
   eslint: ^7.32.0
-  etag: ^1.8.1
   get-port: ^5.1.1
   has-own-prop: ^2.0.0
   husky: ^4.3.0
@@ -35,7 +34,6 @@ dependencies:
   compression: 1.7.4
   connect: 3.7.0
   consola: 2.15.3
-  etag: 1.8.1
   get-port: 5.1.1
   has-own-prop: 2.0.0
   lodash: 4.17.21
@@ -1696,11 +1694,6 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /etag/1.8.1:
-    resolution: {integrity: sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=}
-    engines: {node: '>= 0.6'}
-    dev: false
 
   /events/3.2.0:
     resolution: {integrity: sha512-/46HWwbfCX2xTawVfkKLGxMifJYQBWMwY1mjywRtb4c9x8l5NP3KoJtnIOiL1hfdRkIuYhETxQlo62IF8tcnlg==}
