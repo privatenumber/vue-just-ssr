@@ -1,59 +1,91 @@
 {
-  "name": "vue-just-ssr",
-  "version": "0.0.0-semantic-release",
-  "description": "Instantly add a Vue SSR dev-env to your repo",
-  "keywords": [
-    "vue",
-    "ssr",
-    "cli"
-  ],
-  "license": "MIT",
-  "files": [
-    "bin",
-    "lib"
-  ],
-  "main": "lib/index.js",
-  "bin": {
-    "just-ssr": "bin/just-ssr.js"
-  },
-  "scripts": {
-    "lint": "xo"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": "xo"
-  },
-  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@vue-reactivity/watch": "^0.1.2",
-    "@vue/reactivity": "^3.0.0",
-    "chalk": "^4.1.0",
-    "connect": "^3.7.0",
-    "consola": "^2.15.0",
-    "get-port": "^5.1.1",
-    "lodash": "^4.17.20",
-    "memfs": "^3.2.0",
-    "minimist": "^1.2.5",
-    "opn": "^6.0.0",
-    "terminal-link": "^2.1.1",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0",
-    "webpack-node-externals": "^2.5.2",
-    "webpackbar": "^4.0.0"
-  },
-  "peerDependencies": {
-    "vue": "^2.0.0",
-    "vue-server-renderer": "^2.0.0",
-    "webpack": "^4.0.0"
-  },
-  "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "xo": "^0.33.1"
-  }
+	"name": "vue-just-ssr",
+	"version": "0.0.0-semantic-release",
+	"description": "Instantly add a Vue SSR dev-env to your repo",
+	"keywords": [
+		"vue",
+		"ssr",
+		"cli",
+		"webpack"
+	],
+	"license": "MIT",
+	"repository": "privatenumber/vue-just-ssr",
+	"author": "Hiroki Osame <hiroki.osame@gmail.com>",
+	"files": [
+		"bin",
+		"lib"
+	],
+	"main": "lib/index.js",
+	"bin": {
+		"just-ssr": "bin/just-ssr.js"
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": "eslint"
+	},
+	"peerDependencies": {
+		"vue": "^2.0.0",
+		"vue-server-renderer": "^2.0.0",
+		"webpack": "^4.0.0"
+	},
+	"dependencies": {
+		"@vue-reactivity/watch": "^0.1.2",
+		"@vue/reactivity": "^3.1.5",
+		"chalk": "^4.1.2",
+		"compression": "^1.7.4",
+		"connect": "^3.7.0",
+		"consola": "^2.15.3",
+		"get-port": "^5.1.1",
+		"has-own-prop": "^2.0.0",
+		"lodash": "^4.17.21",
+		"memfs": "^3.2.2",
+		"minimist": "^1.2.5",
+		"open": "^8.2.1",
+		"terminal-link": "^2.1.1",
+		"webpack-dev-middleware": "^5.0.0",
+		"webpack-hot-middleware": "^2.25.0",
+		"webpack-node-externals": "^3.0.0",
+		"webpackbar": "^5.0.0-3"
+	},
+	"devDependencies": {
+		"@pvtnbr/eslint-config-base": "^0.1.19",
+		"conventional-changelog-conventionalcommits": "^4.6.0",
+		"eslint": "^7.32.0",
+		"husky": "^4.3.0",
+		"lint-staged": "^11.1.1",
+		"vue": "^2.0.0",
+		"vue-server-renderer": "^2.0.0",
+		"webpack": "^4.0.0"
+	},
+	"release": {
+		"preset": "conventionalcommits"
+	},
+	"eslintConfig": {
+		"extends": "@pvtnbr/eslint-config-base",
+		"overrides": [
+			{
+				"files": "**/src/*.js",
+				"rules": {
+					"import/no-unresolved": [
+						"error",
+						{
+							"commonjs": true,
+							"caseSensitive": true,
+							"ignore": [
+								"_just-ssr-app",
+								"create-app"
+							]
+						}
+					]
+				}
+			}
+		]
+	}
 }
